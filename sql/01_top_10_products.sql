@@ -1,0 +1,11 @@
+USE `looqbox-challenge`;
+
+SELECT 
+    PRODUCT_COD,
+    PRODUCT_NAME,
+    PRODUCT_VAL,
+    DEP_NAME,
+    SECTION_NAME
+FROM data_product
+ORDER BY PRODUCT_VAL DESC
+LIMIT 10;

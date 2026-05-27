@@ -1,0 +1,10 @@
+USE `looqbox-challenge`;
+
+SELECT 
+    ds.BUSINESS_NAME,
+    SUM(dss.SALES_VALUE) AS TOTAL_SALES
+FROM data_store_sales dss
+INNER JOIN data_store_cad ds ON dss.STORE_CODE = ds.STORE_CODE
+WHERE dss.DATE BETWEEN '2019-01-01' AND '2019-03-31'
+GROUP BY ds.BUSINESS_NAME
+ORDER BY TOTAL_SALES DESC;
