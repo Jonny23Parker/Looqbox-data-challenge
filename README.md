@@ -25,6 +25,12 @@ O desafio consistiu em:
 - ✅ Processar queries prontas e gerar visualização estratégica
 - ✅ Analisar uma base de dados IMDB e criar visualizações com justificativa
 
+**Link para o arquivo do colab disponivel em:* 
+
+(https://colab.research.google.com/drive/1GmlGYDMPIAC2nUNopRkdCbTqv-oan4sI)
+
+*Necessita de credencias de acesso para executar os códigos*
+
 ---
 
 ## 🎯 Habilidades Demonstradas
@@ -69,6 +75,7 @@ looqbox-challenge/
 
 ## 📊 Perguntas de Negócio (SQL)
 
+
 ### 1️⃣ Quais os 10 produtos mais caros da empresa?
 
 ```
@@ -83,6 +90,9 @@ ORDER BY PRODUCT_VAL DESC
 LIMIT 10;
 ```
 
+---
+
+
 ### 2️⃣ Quais seções os departamentos 'BEBIDAS' e 'PADARIA' possuem?
 ```
 SELECT 
@@ -94,6 +104,9 @@ WHERE DEP_NAME IN ('BEBIDAS', 'PADARIA')
 GROUP BY DEP_NAME, SECTION_NAME, SECTION_COD
 ORDER BY DEP_NAME, SECTION_NAME;
 ```
+
+---
+
 
 ### 3️⃣ Total de vendas por Business Area no 1º trimestre de 2019
 
@@ -107,10 +120,18 @@ WHERE dss.DATE BETWEEN '2019-01-01' AND '2019-03-31'
 GROUP BY ds.BUSINESS_NAME
 ORDER BY TOTAL_SALES DESC;
 ```
+
 Resultado: O setor Farma lidera com R$ 81,7 milhões, seguido por Varejo (R$ 81,0 milhões) e Atacado (R$ 80,4 milhões).
+
+---
+
 
 🐍 Função Dinâmica: retrieve_data()
 Função flexível e reutilizável para consultar a tabela data_product_sales com 3 parâmetros opcionais.
+
+
+---
+
 
 Assinatura
 
@@ -125,6 +146,10 @@ def retrieve_data(product_code=None, store_code=None, date=None):
     - date: list ['YYYY-MM-DD', 'YYYY-MM-DD'] (intervalo)
     """
 ```
+
+---
+
+
 Diferenciais Implementados
 ✅ Suporte a valores únicos ou listas
 
@@ -134,21 +159,37 @@ Diferenciais Implementados
 
 ✅ Retorno em DataFrame padronizado
 
+
+---
+
+
 📈 Visualizações Geradas
 
 1. Vendas por Business Area – Q4 2019
 ![Vendas2019](https://github.com/Jonny23Parker/Looqbox-data-challenge/blob/master/images/q4_2019_sales_by_business.png)
+
 Justificativa: Gráfico de barras horizontal para fácil comparação entre áreas de negócio. Valores anotados para clareza executiva.
+
+---
+
 
 2. Distribuição das Avaliações – IMDB
 ![distribuicao](https://github.com/Jonny23Parker/Looqbox-data-challenge/blob/master/images/imdb_rating_distribution.png)
 
 Justificativa: Histograma com KDE para identificar padrão de notas. Linhas da média (6,77) e mediana (7,00) destacadas para referência estatística.
 
+---
+
+
 3. Top 10 Gêneros – IMDB
-"[top10](https://github.com/Jonny23Parker/Looqbox-data-challenge/blob/master/images/imdb_top_genres.png)
+![top10](https://github.com/Jonny23Parker/Looqbox-data-challenge/blob/master/images/imdb_top_genres.png)
+
 Justificativa: Barras horizontais para facilitar leitura dos rótulos de gênero. Útil para times de conteúdo.
+
+---
+
 
 4. Avaliações por Ano – IMDB
 ![Avaliacao](https://github.com/Jonny23Parker/Looqbox-data-challenge/blob/master/images/imdb_ratings_by_year.png)
+
 Justificativa: Dispersão + linha de tendência para mostrar evolução temporal da qualidade dos filmes.
