@@ -1,168 +1,154 @@
-### Would you like to work with us? Apply [here](https://looqbox.gupy.io/)!
+# 🚀 Looqbox Data Challenge – Solução Completa
 
-# Looqbox Data Challenge
-![Looqbox](https://github.com/looqbox/data-challenge/blob/master/logo.png)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-green?logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.0-blue?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7-orange)](https://matplotlib.org/)
+[![Seaborn](https://img.shields.io/badge/Seaborn-0.12-teal)](https://seaborn.pydata.org/)
+[![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/)
 
-## Accessing the database
-You will need to access our MySQL database for this challenge. The database credentials will be sent to you by e-mail.
+**Autor:** Jonatas de Siqueira  
+**Data:** 27 de Maio de 2026  
+**Desafio:** Data Analytics & Engineering Challenge – Looqbox
 
-## Challenge
-### Tables descriptions (you can click on them to see the columns on each table)
- <details>
-  <summary><b> DATA_PRODUCT: PRODUCT INFO</b></summary>
+---
 
-| COLUMN NAME  | COLUMN DESCRIPTION                                 |
-|--------------|----------------------------------------------------|
-| PRODUCT_COD  | PRODUCT CODE                                       |
-| PRODUCT_NAME | PRODUCT FULL NAME                                  |
-| PRODUCT_VAL  | PRODUCT SALES VALUE                                |
-| DEP_NAME     | NAME OF THE DEPARTMENT RESPONSIBLE FOR THE PRODUCT |
-| DEP_COD      | CODE OF THE DEPARTMENT RESPONSIBLE FOR THE PRODUCT |
-| SECTION_NAME | NAME OF THE SECTION WHERE THE PRODUCT IS           |
-| SECTION_COD  | CODE OF THE SECTION WHERE THE PRODUCT IS           |
+## 📋 Sobre o Projeto
 
- </details>
-  
- <details>
-  <summary><b> DATA_PRODUCT_SALES: PRODUCT SALES</b></summary>
+Este repositório contém minha solução completa para o **Desafio Técnico da Looqbox** – uma empresa de tecnologia pioneira em **Search Driven Analytics** e democratização do acesso a dados.
 
-| COLUMN NAME  | COLUMN DESCRIPTION                                 |
-|--------------|----------------------------------------------------|
-| STORE_CODE   | STORE CODE                                         |
-| PRODUCT_CODE | PRODUCT CODE                                       |
-| DATE         | SALES DATE                                         |
-| SALES_VALUE  | SALES VALUES                                       |
-| SALES_QTY    | SALES QUANTITY                                     |
+O desafio consistiu em:
 
-  
- </details>
- <details>
-  <summary><b> DATA_STORE_CAD: STORE INFO</b></summary>
+- ✅ Acessar e explorar um banco de dados MySQL com informações de vendas, produtos e lojas
+- ✅ Responder 3 perguntas de negócio utilizando SQL
+- ✅ Criar uma função dinâmica em Python para consultas parametrizadas
+- ✅ Processar queries prontas e gerar visualização estratégica
+- ✅ Analisar uma base de dados IMDB e criar visualizações com justificativa
 
-| COLUMN NAME  | COLUMN DESCRIPTION                                 |
-|--------------|----------------------------------------------------|
-| STORE_CODE   | STORE CODE                                         |
-| STORE_NAME   | STORE NAME                                         |
-| START_DATE   | SHOP OPENING DATE                                  |
-| END_DATA     | SHOP CLOSING DATE                                  |
-| BUSINESS_NAME| NAMES OF BUSINESS AREA RESPONSIBLE FOR THE SHOP    |
-| BUSINESS_CODE| CODE OF BUSINESS AREA RESPONSIBLE FOR THE SHOP     |
+---
 
- </details>
- <details>
-  <summary><b> DATA_STORE_SALES: SALES PER STORE</b></summary>
+## 🎯 Habilidades Demonstradas
 
-| COLUMN NAME  | COLUMN DESCRIPTION                                 |
-|--------------|----------------------------------------------------|
-| STORE_CODE   | STORE CODE                                         |
-| DATE         | COMMERCIAL DATE                                    |
-| SALES_VALUE  | TOTAL VALUE OF SALES IN THAT DATE                  |
-| SALES_QTY    | TOTAL QUANTITY OF SALES IN THAT DATE               |
+| Área | Tecnologias / Conceitos |
+|------|------------------------|
+| **SQL** | Queries complexas, CTEs, Joins, Agregações, Otimização |
+| **Python** | Pandas, MySQL Connector, Funções dinâmicas, Tratamento de erros |
+| **Visualização** | Matplotlib, Seaborn, Storytelling com dados |
+| **Engenharia de Dados** | Conexão a bancos, ETL, Automação de consultas |
+| **Boas Práticas** | Versionamento (Git), Documentação, Código modular |
 
- </details>
+---
 
-### SQL test
-After accessing our database, create queries using the schema **looqbox_challenge** to answer the following questions:
+## 🗂️ Estrutura do Projeto
 
-1) What are the 10 most expensive products in the company?
-2) What sections do the 'BEBIDAS' and 'PADARIA' departments have?
-3) What was the total sale of products (in $) of each Business Area in the first quarter of 2019?
+```plaintext
+looqbox-challenge/
+│
+├── README.md                          # Documentação completa
+│
+├── sql/
+│   ├── 01_top_10_products.sql         # 10 produtos mais caros
+│   ├── 02_sections_by_dept.sql        # Seções de BEBIDAS e PADARIA
+│   └── 03_sales_by_business.sql       # Vendas por Business Area (Q1 2019)
+│
+├── notebooks/
+│   └── looqbox_challenge_colab.ipynb  # Google Colab (versão interativa)
+│
+├── images/
+│   ├── q4_2019_sales_by_business.png  # Vendas Q4 2019
+│   ├── imdb_rating_distribution.png   # Distribuição das notas IMDB
+│   ├── imdb_top_genres.png            # Top 10 gêneros
+│   └── imdb_ratings_by_year.png       # Tendência de notas por ano
+│
+└── reports/
+    └── looqbox_challenge_report.pdf   # Relatório final (PDF)
+```
 
-### Cases
-#### 1) The Dev Team was tired of developing the same old queries just varying the filters accordingly to their boss demands.
-As a new member of the crew, your mission now is to create a dynamic function in Python, on the most flexible of ways, to produce queries and retrieve a dataframe based on three parameters:
 
-- product_code: integer
+---
 
-- store_code: integer
+## 📊 Perguntas de Negócio (SQL)
 
-- date: list of ISO-like strings
-
-- Date e.g.
-  - ['2019-01-01', '2019-01-31']
-
-It should look like this
-my_data = retrieve_data(product_code, store_code, date)
-
-Make your team proud!
-
-Extra instructions:
-- Retrieve all columns from table data_product_sales;
-- Imagine people from other teams will also utilize this function!
-
-#### 2) A brand new client sent you two ready-to-go queries. Those are listed below:
-
-Query 1:
+### 1️⃣ Quais os 10 produtos mais caros da empresa?
 
 ```
-SELECT
-      STORE_CODE,
-      STORE_NAME,
-      START_DATE,
-      END_DATE,
-      BUSINESS_NAME,
-      BUSINESS_CODE
-FROM data_store_cad
+SELECT 
+    PRODUCT_COD,
+    PRODUCT_NAME,
+    PRODUCT_VAL,
+    DEP_NAME,
+    SECTION_NAME
+FROM data_product
+ORDER BY PRODUCT_VAL DESC
+LIMIT 10;
 ```
-Query 2:
+
+### 2️⃣ Quais seções os departamentos 'BEBIDAS' e 'PADARIA' possuem?
+```
+SELECT 
+    DEP_NAME,
+    SECTION_NAME,
+    SECTION_COD
+FROM data_product
+WHERE DEP_NAME IN ('BEBIDAS', 'PADARIA')
+GROUP BY DEP_NAME, SECTION_NAME, SECTION_COD
+ORDER BY DEP_NAME, SECTION_NAME;
+```
+
+### 3️⃣ Total de vendas por Business Area no 1º trimestre de 2019
 
 ```
-SELECT
-        STORE_CODE,
-        DATE,
-        SALES_VALUE,
-        SALES_QTY
-FROM data_store_sales
-WHERE DATE BETWEEN '2019-01-01' AND '2019-12-31'
+SELECT 
+    ds.BUSINESS_NAME,
+    SUM(dss.SALES_VALUE) AS TOTAL_SALES
+FROM data_store_sales dss
+INNER JOIN data_store_cad ds ON dss.STORE_CODE = ds.STORE_CODE
+WHERE dss.DATE BETWEEN '2019-01-01' AND '2019-03-31'
+GROUP BY ds.BUSINESS_NAME
+ORDER BY TOTAL_SALES DESC;
 ```
-In addition, he gave you this set of instructions:
+Resultado: O setor Farma lidera com R$ 81,7 milhões, seguido por Varejo (R$ 81,0 milhões) e Atacado (R$ 80,4 milhões).
 
-- Use the queries as they are (do not modify them or create a new one);
+🐍 Função Dinâmica: retrieve_data()
+Função flexível e reutilizável para consultar a tabela data_product_sales com 3 parâmetros opcionais.
 
-- Please filter the period between this given range: 
-  - ['2019-10-01','2019-12-31']
+Assinatura
 
+```
+def retrieve_data(product_code=None, store_code=None, date=None):
+    """
+    Retorna DataFrame com filtros dinâmicos.
+    
+    Parâmetros:
+    - product_code: int ou list (código do produto)
+    - store_code: int ou list (código da loja)
+    - date: list ['YYYY-MM-DD', 'YYYY-MM-DD'] (intervalo)
+    """
+```
+Diferenciais Implementados
+✅ Suporte a valores únicos ou listas
 
-<details>
- <summary><b> We are in need of this visualization (click here to see it)! Please, create it with Python</b></summary>
-  
-| Loja           | Categoria   | TM    | 
-|----------------|-------------|-------| 
-| Bahia          | Atacado     | 15.39 | 
-| Bangkok        | Posto       | 13.67 | 
-| Belem          | Proximidade | 15.37 | 
-| Berlin         | Proximidade | 15.39 | 
-| Buenos Aires   | Atacado     | 15.39 | 
-| Chicago        | Varejo      | 15.53 | 
-| Dubai          | Atacado     | 15.39 | 
-| Hong Kong      | Farma       | 26.35 | 
-| London         | Farma       | 28.99 | 
-| Madri          | Farma       | 29.03 | 
-| Miami          | Posto       | 13.67 | 
-| New York       | Proximidade | 15.39 | 
-| Paris          | Proximidade | 15.39 | 
-| Rio de Janeiro | Farma       | 29.59 | 
-| Roma           | Varejo      | 15.39 | 
-| Salvador       | Atacado     | 15.39 | 
-| Sao Paulo      | Varejo      | 15.39 | 
-| Sidney         | Posto       | 13.67 | 
-| Tokio          | Varejo      | 15.39 | 
-| Vancouver      | Posto       | 13.67 | 
-  
-</details>
+✅ Prevenção contra SQL Injection (parametrização)
 
-#### 3) Building your own visualization
+✅ Tratamento de erros e conexões
 
-Create at least one chart using the table **IMDB_movies**. The code must be in Python, and you are free to use any libraries, data in the table and graphic format. Explain why you chose the visualization (or visualizations) you are submitting.
+✅ Retorno em DataFrame padronizado
 
-## Stack
-- MySQL database 
-- Python
+📈 Visualizações Geradas
 
-## Submitting
-- Send an e-mail to the person that you are in contact within Looqbox!
-- Your answer must be sent in PDF format with the code snippets used in each question, as well as the result obtained (values, tables, graphs)
+1. Vendas por Business Area – Q4 2019
+![Vendas2019](https://github.com/Jonny23Parker/Looqbox-data-challenge/blob/master/images/q4_2019_sales_by_business.png)
+Justificativa: Gráfico de barras horizontal para fácil comparação entre áreas de negócio. Valores anotados para clareza executiva.
 
-## Useful links
-- [MySQL documentation](https://dev.mysql.com/doc/)
-- [Data Visualization Catalogue](https://datavizcatalogue.com/)
+2. Distribuição das Avaliações – IMDB
+![distribuicao](https://github.com/Jonny23Parker/Looqbox-data-challenge/blob/master/images/imdb_rating_distribution.png)
+
+Justificativa: Histograma com KDE para identificar padrão de notas. Linhas da média (6,77) e mediana (7,00) destacadas para referência estatística.
+
+3. Top 10 Gêneros – IMDB
+"[top10](https://github.com/Jonny23Parker/Looqbox-data-challenge/blob/master/images/imdb_top_genres.png)
+Justificativa: Barras horizontais para facilitar leitura dos rótulos de gênero. Útil para times de conteúdo.
+
+4. Avaliações por Ano – IMDB
+![Avaliacao](https://github.com/Jonny23Parker/Looqbox-data-challenge/blob/master/images/imdb_ratings_by_year.png)
+Justificativa: Dispersão + linha de tendência para mostrar evolução temporal da qualidade dos filmes.
